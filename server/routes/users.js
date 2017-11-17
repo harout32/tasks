@@ -1,10 +1,10 @@
-const _       = require('lodash');
-const express = require('express');
-const router = express.Router();
-const {ObjectID} = require('mongodb');
+const _              = require('lodash');
+const express        = require('express');
+const router         = express.Router();
+const {ObjectID}     = require('mongodb');
 let {authentication} = require('../middleware/authentication');
-let {Todo}       = require('../models/todo');
-let {User}       = require('../models/user');
+let {Todo}           = require('../models/todo');
+let {User}           = require('../models/user');
 
 
 // sign up new user
@@ -49,5 +49,5 @@ router.get('/me',authentication,(req,res)=>{
     res.send(req.user);
 });
 
-//listening to the port 
+//exporting the router
 module.exports = router

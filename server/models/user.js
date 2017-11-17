@@ -10,7 +10,7 @@ let UserSchema   = new mongoose.Schema({
             required:      true,
             trim:          true,
             type:          String,
-            minlength:     1,
+            minlength:     1
         },
         email:             {
             required:      true,

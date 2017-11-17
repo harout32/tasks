@@ -1,14 +1,14 @@
 require('./server/config/config');
 let {mongoose}   = require('./server/db/mongoose');
-const express = require('express');
+const express    = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
+const path       = require('path');
 
-const users = require('./server/routes/users');
-const todos = require('./server/routes/todos')
-const port = process.env.PORT;
+const users      = require('./server/routes/users');
+const todos      = require('./server/routes/todos')
+const port       = process.env.PORT;
 
-let app    = express();
+let app          = express();
 // just for dev
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use('/users',users);
 app.use('/todos',todos);
 
+//redirecting to the angular app with wild card
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'dist/index.html'));
 })

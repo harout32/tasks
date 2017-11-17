@@ -7,4 +7,3 @@ if(env === 'development'){
         process.env[key] = envConfig[key];
     });
 }
-
